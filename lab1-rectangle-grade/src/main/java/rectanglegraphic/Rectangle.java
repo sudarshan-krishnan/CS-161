@@ -5,6 +5,9 @@
 
 package rectanglegraphic;
 
+import java.io.File;
+import java.io.FileReader;
+
 public class Rectangle {
 
     int cols;
@@ -12,6 +15,10 @@ public class Rectangle {
     boolean filled;
     
     public static void main(String[] args) {
+
+        File Rectangle = new File("rectangles.txt");
+
+        
         
     }
 }
