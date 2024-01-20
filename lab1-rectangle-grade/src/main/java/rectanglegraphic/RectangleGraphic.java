@@ -13,18 +13,18 @@ public class RectangleGraphic {
     
     public static void main(String[] args) throws FileNotFoundException {
 
-        File data = new File("rectangles.txt");
-        try (Scanner keyboard = new Scanner(data)) {
+        File data = new File("rectangles.txt");     //creating file class object
+        try (Scanner keyboard = new Scanner(data)) {         // creating an object for scanner
             
-            while (keyboard.hasNext()) {
+            while (keyboard.hasNext()) {                //keyboard reads only if there is something to read
 
-                int row = keyboard.nextInt();
-                int col = keyboard.nextInt();
-                String solid = keyboard.next();
+                int row = keyboard.nextInt();           //reading the first int for rows
+                int col = keyboard.nextInt();           //reading the second int for columns
+                String solid = keyboard.next();         //reading for unfilled or filled
 
                 boolean b = false;
 
-                if (solid .equals("filled"))
+                if (solid .equals("filled"))   
                     b = true;
 
             
@@ -32,7 +32,7 @@ public class RectangleGraphic {
 
                 String pat = rect.toString();
 
-                System.out.println(pat);
+                System.out.println(pat);               //printing the pattern
 
             }
         }

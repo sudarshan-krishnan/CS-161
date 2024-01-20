@@ -11,6 +11,8 @@ public class Student {
     String name;
     int[] scores = new int[5];
 
+    //Constructor that will set name and scores
+
     public Student(String name, int[] scores){
 
         this.name = name;
@@ -22,6 +24,8 @@ public class Student {
         }
 
     }
+
+    //Calculate and return the average of the five test scores
 
     public double getAverage(){
 
@@ -38,6 +42,8 @@ public class Student {
         return average; 
 
     }
+
+    //Calculate and return the student’s letter grade using their average.
 
     public String getGrade(){
 
@@ -68,6 +74,8 @@ public class Student {
             return grade;
     
             }
+
+    // Print out name, test scores, average, and letter grade to the output file
 
     public String toString(){
 

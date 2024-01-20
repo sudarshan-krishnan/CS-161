@@ -7,10 +7,11 @@ package rectanglegraphic;
 
 public class Rectangle {
 
-    int rows;
-    int cols;
-    boolean filled;
+    int rows;               //number of rows
+    int cols;               //number of columns
+    boolean filled;         //Defines either a filled or unfilled rectangle
     
+    //Constructor that will set rows, cols, and filled
     public Rectangle (int a,int b,boolean bool){
 
         rows = a;
@@ -19,6 +20,7 @@ public class Rectangle {
 
     }
 
+    //Create and return a String that graphically represents the Rectangle
     public String toString() {
 
         String pattern = "";
