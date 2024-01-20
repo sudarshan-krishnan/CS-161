@@ -5,6 +5,7 @@
 
 package gradebook;
 
+
 public class Student {
 
     String name;
@@ -67,5 +68,20 @@ public class Student {
             return grade;
     
             }
+
+    public String toString(){
+
+       String namescore = "";
+
+       for (int i = 0; i < this.scores.length; i++) {
+
+        namescore += this.scores[i] + "\t\t";
+        
+       }
+
+
+        return String.format("%s\t%s",name,namescore);
+
+    }
 }
 
