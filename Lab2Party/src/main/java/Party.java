@@ -12,21 +12,24 @@ public class Party {
 
 	}
 
-	public void addHero(Hero hero ,int integer){
+	public void addHero(Hero hero, int index) {
+	       String name = hero.getName();
 
-        for (int i = 0; i < heroes.length; i++) {
-			Hero h = heroes[i]; // Getting the hero at the current index
-				
-				// Checking if names match
-				if (h.getName().equals(hero.getName())) {
-					System.out.println(hero.getName() + " is already in the party.");
-					return; 
-				}
-			}
-			heroes[integer] = hero;
+	       for (Hero existingHero : heroes) {
+	          
+	    	   if (existingHero != null && existingHero.getName().equals(name)) 
+	    	   
+	    	   {
+	               
+	    		   System.out.println(name + " is already in the party.");
+	    		   return;
+	           }
+	       }
 
-		}
-
+	       // Add the hero to the specified index in the party
+	       heroes[index] = hero;
+	   }
+	
 	public void removeHero(int index) {
 		heroes[index] = null;
 	}
