@@ -5,39 +5,37 @@
 
 public class Party {
 
-	Hero[] heroes;
+    Hero[] heroes; // Array to store heroes in the party
 
-	public Party() {
-		this.heroes = new Hero[3]; 
+    // Constructor initializes the party with space for 3 heroes
+    public Party() {
+        this.heroes = new Hero[3];
+    }
 
-	}
+    // Adds a hero to the party if not already present
+    public void addHero(Hero hero, int index) {
+        String heroName = hero.getName();
 
-	public void addHero(Hero hero, int index) {
-	       String name = hero.getName();
+        for (Hero existingHero : heroes) {
+            if (existingHero != null && existingHero.getName().equals(heroName)) {
+                System.out.println(heroName + " is already in the party.");
+                return;
+            }
+        }
+        heroes[index] = hero; // Place hero in specified index
+    }
 
-	       for (Hero existingHero : heroes) {
-	          
-	    	   if (existingHero != null && existingHero.getName().equals(name)) 
-	    	   
-	    	   {
-	               
-	    		   System.out.println(name + " is already in the party.");
-	    		   return;
-	           }
-	       }
+    // Removes a hero from the party by setting their slot to null
+    public void removeHero(int index) {
+        heroes[index] = null;
+    }
 
-	       // Add the hero to the specified index in the party
-	       heroes[index] = hero;
-	   }
-	
-	public void removeHero(int index) {
-		heroes[index] = null;
-	}
- 
-	public Hero getHero(int index) {
-		return heroes[index];
-	}
+    // Retrieves a hero from the party by index
+    public Hero getHero(int index) {
+        return heroes[index];
+    }
 
+    // Distributes experience to all heroes in the party
     public void gainExperience(int experience) {
         System.out.println("The party gained " + experience + " experience.");
         for (Hero hero : heroes) {
@@ -47,13 +45,14 @@ public class Party {
         }
     }
 
+    // Generates and returns a string representation of the party
     public String toString() {
         StringBuilder sb = new StringBuilder("Party:\n");
         for (Hero hero : heroes) {
             if (hero != null) {
-                sb.append(hero.toString()).append("\n");
+                sb.append(hero.toString()).append("\n");		// Used a string builder append function
             }
         }
-        return sb.toString();
-}
+        return sb.toString();		//Return final string
+    }
 }

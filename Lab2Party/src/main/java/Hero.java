@@ -5,83 +5,68 @@
 
 public class Hero {
 
-	String name = "";
-	String role = "";
-	int level;
-	int experience;
+    // Properties
+    String name = "";
+    String role = "";
+    int level;
+    int experience;
+    final int MAX_LEVEL = 100; 
 
-	final int MAX_LEVEL = 100;
+    // Predefined roles
+    public static final String[] ROLES = { "Warrior", "Priest", "Wizard", "Thief" };
 
-	public static final String[] ROLES = { "Warrior", "Priest", "Wizard", "Thief" };
+    // Constructor to initialize hero with a name
+    public Hero(String nam) {
+        level = 1; 
+        experience = 0; 
+        role = "Unassigned"; 
+        this.name = nam;
+    }
 
-	public Hero(String nam) {
+    // Assigns a valid role to the hero
+    public void setRole(String duty) {
+        boolean roleFound = false;
 
-		level = 1;
-		experience = 0;
-		role = "Unassigned";
-		this.name = nam;
+        for (String validRole : ROLES) {
+            if (validRole.equals(duty)) {
+                this.role = duty;
+                roleFound = true;
+                break;
+            }
+        }
 
-	}
+        if (!roleFound) {
+            System.out.println("Invalid role");
+            role = "Unassigned";
+        }
+    }
 
-	public void setRole(String duty) {
-		boolean bool = false;
+    // Getter methods
+    public String getName() { return name; }
+    public String getRole() { return role; }
+    public int getLevel() { return level; }
+    public int getExperience() { return experience; }
 
-		for (int index = 0; index < ROLES.length; index++) {
-			if (ROLES[index].equals(duty)) {
-				this.role = duty;
-				bool = true;
-				break; // Exit the loop once a valid role is found
-			}
-		}
+    // Calculates experience required for the next level
+    public int expToLevelUp() {
+        return (int) Math.pow(level, 2);
+    }
 
-		if (!bool) {
-			System.out.println("Invalid role");
-			role = "Unassigned";
-		}
-	}
+    // Adds experience and handles leveling up
+    public int gainExperience(int expGained) {
+        experience += expGained;
 
-	public String getName() {
-		return name;
-	}
+        while (level < MAX_LEVEL && experience >= expToLevelUp()) {
+            experience -= expToLevelUp(); 
+            level++; 
+            System.out.println(name + " is now level " + level + "!");
+        }
+        return level;
+    }
 
-	public String getRole() {
-		return role;
-	}
-
-	public int getLevel() {
-		return level;
-	}
-
-	public int getExperience() {
-		return experience;
-	}
-
-	public int expToLevelUp() {
-		int r = (int) Math.pow(level, 2);
-		return r;
-	}
-
-	public int gainExperience(int e) {
-
-		experience += e;
-
-		while (level < MAX_LEVEL && experience >= this.expToLevelUp()) {
-
-			experience -= this.expToLevelUp();
-			level++;
-
-			System.out.println(name + " is now level " + level + "!");
-
-		}
-		return level;
-	}
-
-	public String toString() {
-
-		String s = "";
-		return this.name + " the " + this.role + " is level " + this.level + " with " + this.experience
-				+ " experience.";
-
-	}
+    // Returns a string representation of the hero
+    public String toString() {
+        return name + " the " + role + " is level " + level + " with " + experience + " experience.";
+    }
 
 }
