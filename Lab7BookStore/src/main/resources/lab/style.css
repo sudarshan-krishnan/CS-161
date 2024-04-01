@@ -1,0 +1,42 @@
+/* Light theme styles */
+.root.light-theme {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.button.light-theme {
+    -fx-background-color: lightgray;
+}
+
+.label.light-theme {
+    -fx-text-fill: black;
+}
+
+/* Dark theme styles */
+.root.dark-theme {
+    -fx-background-color: #333;
+    -fx-text-fill: white;
+}
+
+.button.dark-theme {
+    -fx-background-color: #555;
+}
+
+.label.dark-theme {
+    -fx-text-fill: white;
+}
+
+/* Retro theme styles */
+.root.retro-theme {
+    -fx-background-color: #00ff00; 
+    -fx-text-fill: #ff00ff;
+}
+
+.button.retro-theme {
+    -fx-background-color: #ff00ff; 
+    -fx-text-fill: #00ff00;
+}
+
+.label.retro-theme {
+    -fx-text-fill: #00ff00; 
+}
