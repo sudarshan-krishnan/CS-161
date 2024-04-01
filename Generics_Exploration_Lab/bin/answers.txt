@@ -1,0 +1,25 @@
+Name: Sudarshan Krishnan
+Username: kriss03
+
+What are Generic Types?
+
+	Generic types are a feature in Java that allows classes and interfaces to be parameterized with types. They enable you to write flexible, 
+	reusable code that works with any type, while maintaining strong type checking at compile-time. Generics ensure that you use objects of a 
+	specific type without the need for casting, reducing runtime errors and improving code readability and safety.
+
+Why are Generic Types useful?
+
+	Generic types are useful because they enhance type safety and readability by enforcing compile-time checks, reduce boilerplate by avoiding 
+	casts, and increase code reusability by allowing classes and methods to operate on objects of various types.
+	
+What Java API class(es) have you already used in this class that use Generic Types?
+
+	In the custom classes we've discussed, like `Box`, `Glass`, `Cup`, and stationery items (`Pen`, `Notebook`), we did not directly use Java API
+	classes that employ generic types. However, the examples conceptually align with Java's extensive use of generics in its Collections Framework,
+	e.g., `ArrayList<T>` and `HashMap<K,V>`, which were implied in our discussion on type safety and flexibility.
+
+What is one specific situation that using Generic Types would provide an advantage over a standard specific type?
+
+	Using generic types allows for type-safe collections without casting. For example, `ArrayList<String>` ensures that only strings can be added, 
+	eliminating the risk of `ClassCastException` at runtime, which could happen with a non-generic `ArrayList`. This enhances code readability, 
+	maintainability, and safety by catching type mismatches at compile time, not at runtime.
