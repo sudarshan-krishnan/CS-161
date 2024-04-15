@@ -9,8 +9,6 @@ import java.io.IOException;
 
 /**
  * @author Sudarshan Krishnan, kriss03
- * @author
- * @author
  * 
  * Integrated by Sudarshan Krishnan, Amit Jadhav and Sanjana Gondariya
  * Documented by Sudarshan Krishnan
